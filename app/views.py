@@ -1,7 +1,7 @@
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
-from app.forms import ProfileForm
+from .forms import ProfileForm
 #from app.models import UserProfile
 #from werkzeug.security import check_password_hash
 
@@ -13,15 +13,18 @@ from app.forms import ProfileForm
 '''
 @app.route("/")
 def home():
-    return render_template(url_for('home'))
+    return render_template('home.html')
 
 @app.route("/about")
 def about():
     return render_template('about.html')
 
-@app.route("/profile")
+@app.route("/profile", methods=["GET", "POST"])
 def profile():
-    return render_template(url_for('profile'))
+    form = ProfileForm()
+
+    #if form.validate_on_submit():
+    return render_template('profile.html', form=form)
 
 """@app.route("/profiles/<userid>")
 def profiles(userid):
