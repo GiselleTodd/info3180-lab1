@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block main%}
+  <h1>Add Profile</h1>
+  <br>
+
+    <form class="" action={{ url_for('')}} method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        {form.firstname.label}
+        {form.firstname.data}
+      </div>
+
+      <div class="form-group">
+        {form.lastname.label}
+        {form.lastname.data}
+      </div>
+
+      <div class="form-group">
+        {form.gender.label}
+        {form.gender.data}
+      </div>
+
+      <div class="form-group">
+        {form.email.label}
+        {form.email.data}
+      </div>
+
+      <div class="form-group">
+        {form.Location.label}
+        {form.Location.data}
+      </div>
+
+      <div class="form-group">
+        {form.biography.label}
+        {form.biography.data}
+      </div>
+
+      <div class="form-group">
+        {form.profilepicture.label}
+        {form.profilepicture.data}
+      </div>
+
+      <button type="submit" name="button" class="btn btn-primary btn-block">Add Profile</button>
+    </form>
+{% endblock %}
