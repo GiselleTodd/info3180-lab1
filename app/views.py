@@ -1,11 +1,10 @@
-from app import app, db, login_manager
+from app import app, db
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, current_user, login_required
-from app.forms import AddProfile
+from app.forms import ProfileForm
 #from app.models import UserProfile
-from werkzeug.security import check_password_hash
+#from werkzeug.security import check_password_hash
 
-#app = Flask(__name__)
 
 '''
 
